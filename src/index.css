@@ -1,29 +1,137 @@
-.cb-delimiter {
-	line-height: 1.6em;
-	width: 100%;
-	text-align: center;
-	color: black;
+.ce-code {
+	padding: 0px;
+  margin: 15px auto;
+	max-width: 90%;
+  border-radius: 4px;
+  box-shadow: rgb(0, 0, 0) 0px 0px 3px;
 }
 
-/* Delimiter styles */
-.cb-delimiter-star span {
-	font-size: 30px;
-	line-height: 65px;
-	display: inline-block;
-	height: 30px;
-	letter-spacing: 0.2em;
-	font-weight: 900;
+.ce-code > pre {
+	min-height: 25px;
+  font-family: 'FiraCode', sans-serif;
+  overflow-x: auto;
+  background: #242e39;
+  color: #ccc;
+  margin: 0 auto;
+  font-size: 0.98em;
+  border-radius: 0 0 4px 4px;
+  padding: 20px;
+	outline: none;
+	scrollbar-width: none;
 }
-.cb-delimiter-dash span {
-	margin: 10px;
-	display: inline-block;
-	height: 30px;
-	letter-spacing: 0.6em;
-	font-weight: 900;
+
+.ce-code > pre::-webkit-scrollbar {
+  display: none;
 }
-.cb-delimiter-line hr {
-	font-size: 48px;
+
+.ce-code > pre > code {
+	padding: 20px 0px;
+}
+
+.ce-code > pre > code::selection {
+  background: #ffdd6c;
+  color: #4d4d4d;
+}
+.ce-code > pre > code::-moz-selection {
+  background: #ffdd6c;
+  color: #4d4d4d;
+}
+.ce-code > pre > code::-webkit-selection {
+  background: #ffdd6c;
+  color: #4d4d4d;
+}
+
+.ce-terminal-bar {
+	text-align: center;
+  height: 35px;
+  margin: 0 auto;
+  font-family: monospace;
+  float: none;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  position: relative;
+  background-color: #303a44;
+}
+
+.ce-terminal-red, .ce-terminal-yellow , .ce-terminal-green {
+  border-radius: 100%;
+  width: 16px;
+  height: 16px;
+  float: left;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.ce-terminal-red {
+	background-color: #d56151;
+  left: 12px;
+}
+
+.ce-terminal-yellow {
+	background-color: #ecd079;
+  left: 41px;
+}
+
+.ce-terminal-green {	
+	background-color: #5db38c;
+  left: 70px;
+}
+
+.ce-terminal-options {
+	color: grey;
+  float: right;
+  position: absolute;
+  font-size: 13px;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  right: 15px;
+	height: 16px;
+}
+
+.ce-terminal-language {
+	vertical-align: bottom;
+	display: inline;
+	margin-left: 5px;
+}
+
+.ce-copy-btn {
+	cursor: pointer;
+	position: relative;
+}
+
+.ce-copy-tooltip {
+	font-size: 12px;
+	width: 50px;
+	margin-left: -25px; /* Center the tooltip */
+	background-color: #0c0c0c;
+	color: #ececec;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 10px;
+	position: absolute;
+	z-index: 1;
+	top: 125%; /* Position the tooltip below the button */
+	transition: opacity 0.3s;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.ce-copy-tooltip::after {
+	content: "";
+	position: absolute;
+	bottom: 100%; /* Bottom of the tooltip */
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
 	border-style: solid;
-	border-color: black;
-	border-radius: 3px;
+	border-color: transparent transparent #0c0c0c transparent;
+}
+
+.ce-copy-tooltip.visible {
+	visibility: visible;
+	opacity: 1;
 }

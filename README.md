@@ -101,6 +101,8 @@ Example:
 
 ## Known Issues
 
-* After merging similar code blocks, pressing any arrow key results in an error. (Probably caused by the way Editor.js handles merges)
+* While Pasting after a CMD+A selection, only the first character is replaced (Firefox, but works on Safari).
+  * Workaround is to remove the text after selection and then paste.
+* Extra new line break added for every Enter key on Safari browser.
 * There is no syntax highlighting for code. This is done to avoid any impact to the actual code data (Adding syntax highlighting can impact inner HTML, which will directly affect saved data).
 * Terminal buttons are non-functional. These are intentionally left to avoid making the package too complex. These can be anyway be added at the render time.

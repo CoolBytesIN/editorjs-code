@@ -8,7 +8,7 @@
 
 .ce-code > pre {
 	min-height: 25px;
-  font-family: 'FiraCode', sans-serif;
+  font-family: monospace;
   overflow-x: auto;
   background: #242e39;
   color: #ccc;
@@ -25,7 +25,9 @@
 }
 
 .ce-code > pre > code {
-	padding: 20px 0px;
+	outline: none;
+  line-height: 1.25em;
+  font-family: monospace;
 }
 
 .ce-code > pre > code::selection {
@@ -102,6 +104,11 @@
 .ce-copy-btn {
 	cursor: pointer;
 	position: relative;
+}
+
+.ce-copy-btn svg {
+  height: 16px;
+  width: 16px;
 }
 
 .ce-copy-tooltip {

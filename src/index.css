@@ -90,11 +90,12 @@
   bottom: 0;
   right: 15px;
 	height: 16px;
+  display: flex;
 }
 
 .ce-terminal-language {
-	vertical-align: bottom;
-	display: inline;
+	/* vertical-align: bottom;
+	display: inline; */
 	margin-left: 5px;
 }
 
@@ -105,7 +106,7 @@
 
 .ce-copy-tooltip {
 	font-size: 12px;
-	width: 50px;
+	/* width: 50px; */
 	margin-left: -25px; /* Center the tooltip */
 	background-color: #0c0c0c;
 	color: #ececec;

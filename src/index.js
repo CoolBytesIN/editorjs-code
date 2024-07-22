@@ -261,18 +261,18 @@ export default class Code {
 
     // <pre> tag to wrap the code block
     const preDiv = document.createElement('PRE');
-    preDiv.contentEditable = !this._readOnly;
-    preDiv.addEventListener("paste", (event) => this._onPaste(event));
-    preDiv.addEventListener('keydown', (event) => {
-      if (event.code === 'Tab') {
-        this._tabHandler(event);
-      }
-    });
 
     // Code block
     this._codeBlock = document.createElement('CODE');
     this._codeBlock.setAttribute('language', this.currentLanguage);
     this._codeBlock.textContent = this._data.code || '';
+    this._codeBlock.contentEditable = !this._readOnly;
+    this._codeBlock.addEventListener("paste", (event) => this._onPaste(event));
+    this._codeBlock.addEventListener('keydown', (event) => {
+      if (event.code === 'Tab') {
+        this._tabHandler(event);
+      }
+    });
     preDiv.appendChild(this._codeBlock);
 
     parentDiv.appendChild(terminalBar);
@@ -410,7 +410,7 @@ export default class Code {
    */
   merge(data) {
     if (this._codeBlock) {
-      this._codeBlock.textContent = this._codeBlock.textContent + data.code || '';
+      this._codeBlock.innerHTML = this._codeBlock.innerHTML + data.code || '';
     }
   }
 
